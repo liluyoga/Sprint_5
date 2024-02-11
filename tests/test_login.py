@@ -21,11 +21,9 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.BUTTON_PLACE_ORDER))
 
-        url = driver.current_url
+        element = driver.find_element(*TestLocators.BUTTON_PLACE_ORDER).text
 
-        driver.quit()
-
-        assert url == 'https://stellarburgers.nomoreparties.site/'
+        assert element == 'Оформить заказ'
 
     def test_login_by_button_in_personal_account(self, driver):
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(TestLocators.PERSONAL_ACCOUNT))
@@ -41,11 +39,9 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.BUTTON_PLACE_ORDER))
 
-        url = driver.current_url
+        element = driver.find_element(*TestLocators.BUTTON_PLACE_ORDER).text
 
-        driver.quit()
-
-        assert url == 'https://stellarburgers.nomoreparties.site/'
+        assert element == 'Оформить заказ'
 
     def test_login_by_button_on_registration_form(self, driver):
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(TestLocators.PERSONAL_ACCOUNT))
@@ -69,11 +65,9 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.BUTTON_PLACE_ORDER))
 
-        url = driver.current_url
+        element = driver.find_element(*TestLocators.BUTTON_PLACE_ORDER).text
 
-        driver.quit()
-
-        assert url == 'https://stellarburgers.nomoreparties.site/'
+        assert element == 'Оформить заказ'
 
     def test_login_by_button_on_password_recovery_page(self, driver):
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(TestLocators.PERSONAL_ACCOUNT))
@@ -98,8 +92,6 @@ class TestLogin:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.BUTTON_PLACE_ORDER))
 
-        url = driver.current_url
+        element = driver.find_element(*TestLocators.BUTTON_PLACE_ORDER).text
 
-        driver.quit()
-
-        assert url == 'https://stellarburgers.nomoreparties.site/'
+        assert element == 'Оформить заказ'

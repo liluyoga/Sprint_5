@@ -14,8 +14,6 @@ class TestConstructorSection:
 
         element = driver.find_element(*TestLocators.CURRENT_SECTION).text
 
-        driver.quit()
-
         assert element == 'Соусы'
 
     def test_crossing_to_stuffing(self, driver):
@@ -26,8 +24,6 @@ class TestConstructorSection:
         WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(TestLocators.CURRENT_SECTION))
 
         element = driver.find_element(*TestLocators.CURRENT_SECTION).text
-
-        driver.quit()
 
         assert element == 'Начинки'
 
@@ -43,7 +39,5 @@ class TestConstructorSection:
         WebDriverWait(driver, 3).until(expected_conditions.presence_of_element_located(TestLocators.CURRENT_SECTION))
 
         element = driver.find_element(*TestLocators.CURRENT_SECTION).text
-
-        driver.quit()
 
         assert element == 'Булки'

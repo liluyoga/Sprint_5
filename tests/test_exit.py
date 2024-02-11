@@ -31,6 +31,4 @@ class TestExitFromPersonalAccount:
 
         url = driver.current_url
 
-        driver.quit()
-
         assert '/login' in url

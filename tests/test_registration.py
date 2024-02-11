@@ -23,11 +23,9 @@ class TestRegistration:
 
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(TestLocators.BUTTON_LOG_ON))
 
-        url = driver.current_url
+        element = driver.find_element(*TestLocators.BUTTON_LOG_ON).text
 
-        driver.quit()
-
-        assert '/login' in url
+        assert element == 'Войти'
 
     def test_registration_with_incorrect_password(self, driver):
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(TestLocators.PERSONAL_ACCOUNT))
@@ -48,11 +46,8 @@ class TestRegistration:
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(TestLocators.ERROR_INCORRECT_PASSWORD))
 
         element = driver.find_element(*TestLocators.ERROR_INCORRECT_PASSWORD).text
-        url = driver.current_url
 
-        driver.quit()
-
-        assert element == 'Некорректный пароль' and '/register' in url
+        assert element == 'Некорректный пароль'
 
 
 

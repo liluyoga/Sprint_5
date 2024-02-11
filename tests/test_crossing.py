@@ -26,8 +26,6 @@ class TestCrossing:
 
         url = driver.current_url
 
-        driver.quit()
-
         assert '/account/profile' in url
 
     def test_crossing_to_constructor_from_personal_account_by_click_constructor(self, driver):
@@ -57,8 +55,6 @@ class TestCrossing:
         element = driver.find_element(*TestLocators.BUILD_A_BURGER).text
         url = driver.current_url
 
-        driver.quit()
-
         assert element == 'Соберите бургер' and url == 'https://stellarburgers.nomoreparties.site/'
 
     def test_crossing_to_constructor_from_personal_account_by_click_logo(self, driver):
@@ -87,8 +83,6 @@ class TestCrossing:
 
         element = driver.find_element(*TestLocators.BUILD_A_BURGER).text
         url = driver.current_url
-
-        driver.quit()
 
         assert element == 'Соберите бургер' and url == 'https://stellarburgers.nomoreparties.site/'
 
